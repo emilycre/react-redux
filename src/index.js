@@ -1,5 +1,18 @@
 import { createStore } from 'redux';
-import { ADD_DRINK, ADD_SANDWICH, ADD_CHIPS, REMOVE_DRINK, REMOVE_SANDWICH, REMOVE_CHIPS} from './actions/lunchActions';
+import {
+  ADD_DRINK,
+  addDrink,
+  ADD_SANDWICH,
+  addSandwich,
+  ADD_CHIPS,
+  addChips,
+  REMOVE_DRINK,
+  removeDrink,
+  REMOVE_SANDWICH,
+  removeSandwich,
+  REMOVE_CHIPS,
+  removeChips
+} from './actions/lunchActions';
 
 const initialState = {
   drink: null,
@@ -29,42 +42,42 @@ function reducer(state = initialState, action) {
 const store = createStore(reducer);
 
 store.dispatch({
-  type: ADD_DRINK,
+  type: addDrink,
   payload: 'Iced Tea'
 });
 
 console.log('Added your drink.', store.getState());
 
 store.dispatch({
-  type: ADD_SANDWICH,
+  type: addSandwich,
   payload: 'Veggie + Hummus'
 });
 
 console.log('Added your sandwich.', store.getState());
 
 store.dispatch({
-  type: ADD_CHIPS,
+  type: addChips,
   payload: 'Pop Chips'
 });
 
 console.log('Added your chips.', store.getState());
 
 store.dispatch({
-  type: REMOVE_DRINK,
+  type: removeDrink,
   payload: 'Iced Tea'
 });
 
 console.log('Removed your drinks.', store.getState());
 
 store.dispatch({
-  type: REMOVE_SANDWICH,
+  type: removeSandwich,
   payload: 'Veggie + Hummus'
 });
 
 console.log('Removed your sandwich.', store.getState());
 
 store.dispatch({
-  type: REMOVE_CHIPS,
+  type: removeChips,
   payload: 'Pop Chips'
 });
 
