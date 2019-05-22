@@ -45,3 +45,24 @@ store.dispatch({
 });
 
 console.log('Added your chips.', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_DRINK',
+  payload: 'Iced Tea'
+});
+
+console.log('Removed your drinks.', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_SANDWICH',
+  payload: 'Veggie + Hummus'
+});
+
+console.log('Removed your sandwich.', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_CHIPS',
+  payload: 'Pop Chips'
+});
+
+console.log('Removed your chips.', store.getState());
