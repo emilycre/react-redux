@@ -1,13 +1,12 @@
-import { createStore } from 'redux';
-
 import {
   ADD_DRINK,
   ADD_SANDWICH,
   ADD_CHIPS,
   REMOVE_DRINK,
   REMOVE_SANDWICH,
-  REMOVE_CHIPS
-} from './actions/lunchActions';
+  REMOVE_CHIPS,
+  REMOVE_ALL
+} from '../actions/lunchActions';
 
 const initialState = {
   drink: null,
@@ -15,7 +14,7 @@ const initialState = {
   chips: null
 };
 
-function reducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch(action.type) {
     case ADD_DRINK:
       return { ...state, drink: action.payload };
@@ -29,6 +28,8 @@ function reducer(state = initialState, action) {
       return { ...state, sandwich: null };
     case REMOVE_CHIPS:
       return { ...state, chips: null};
+    case REMOVE_ALL:
+      return initialState;
     default:
       return state;
   }

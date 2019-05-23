@@ -10,7 +10,9 @@ import {
   REMOVE_SANDWICH,
   removeSandwich,
   REMOVE_CHIPS,
-  removeChips
+  removeChips,
+  removeAll,
+  REMOVE_ALL
 } from './lunchActions';
 
 describe('Lunch Actions', () => {
@@ -53,6 +55,12 @@ describe('Lunch Actions', () => {
     expect(removeChips('Pop chips.')).toEqual({
       type: REMOVE_CHIPS,
       payload: 'Pop chips.'
+    });
+  });
+
+  it('Removes all', () => {
+    expect(removeAll()).toEqual({
+      type: REMOVE_ALL
     });
   });
 });
