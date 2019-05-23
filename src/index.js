@@ -1,84 +1,39 @@
 import { createStore } from 'redux';
+import reducer from './reducers/lunchReducer';
 import {
-  ADD_DRINK,
   addDrink,
-  ADD_SANDWICH,
   addSandwich,
-  ADD_CHIPS,
   addChips,
-  REMOVE_DRINK,
   removeDrink,
-  REMOVE_SANDWICH,
   removeSandwich,
-  REMOVE_CHIPS,
-  removeChips
+  removeChips,
+  removeAll
 } from './actions/lunchActions';
-
-const initialState = {
-  drink: null,
-  sandwich: null,
-  chips: null
-};
-
-function reducer(state = initialState, action) {
-  switch(action.type) {
-    case ADD_DRINK:
-      return { ...state, drink: action.payload };
-    case ADD_SANDWICH:
-      return { ...state, sandwich: action.payload };
-    case ADD_CHIPS:
-      return { ...state, chips: action.payload };
-    case REMOVE_DRINK:
-      return { ...state, drink: null };
-    case REMOVE_SANDWICH:
-      return { ...state, sandwich: null };
-    case REMOVE_CHIPS:
-      return { ...state, chips: null};
-    default:
-      return state;
-  }
-}
 
 const store = createStore(reducer);
 
-store.dispatch({
-  type: addDrink,
-  payload: 'Iced Tea'
-});
+store.dispatch(addDrink('Ice Tea'));
 
 console.log('Added your drink.', store.getState());
 
-store.dispatch({
-  type: addSandwich,
-  payload: 'Veggie + Hummus'
-});
+store.dispatch(addSandwich('Veggie'));
 
 console.log('Added your sandwich.', store.getState());
 
-store.dispatch({
-  type: addChips,
-  payload: 'Pop Chips'
-});
+store.dispatch((addChips('Pop Chips')));
 
 console.log('Added your chips.', store.getState());
 
-store.dispatch({
-  type: removeDrink,
-  payload: 'Iced Tea'
-});
+store.dispatch(removeDrink('Iced Tea'));
 
 console.log('Removed your drinks.', store.getState());
 
-store.dispatch({
-  type: removeSandwich,
-  payload: 'Veggie + Hummus'
-});
+store.dispatch(removeSandwich('Veggie'));
 
 console.log('Removed your sandwich.', store.getState());
 
-store.dispatch({
-  type: removeChips,
-  payload: 'Pop Chips'
-});
+store.dispatch(removeChips('Pop Chips'));
 
 console.log('Removed your chips.', store.getState());
+
+store.dispatch(removeAll());

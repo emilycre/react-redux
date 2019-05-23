@@ -33,3 +33,8 @@ export const removeChips = chips => ({
   type: REMOVE_CHIPS,
   payload: chips
 });
+
+export const REMOVE_ALL = 'REMOVE_ALL';
+export const removeAll = () => ({
+  type: REMOVE_ALL
+});
