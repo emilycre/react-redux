@@ -2,9 +2,7 @@ import {
   createComment,
   CREATE_COMMENT,
   deleteComment,
-  DELETE_COMMENT,
-  updateComment,
-  UPDATE_COMMENT
+  DELETE_COMMENT
 } from './commentActions';
 
 describe('Comment Action', () => {
