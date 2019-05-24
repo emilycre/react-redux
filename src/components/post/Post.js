@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { FaTrashAlt } from 'react-icons/fa';
 
-function Post({ post }) {
+function Post({ post, deletePost }) {
   return (
     <>
-      <p>{post.title}</p>
+      <Link to={`/posts/${post.id}`}>
+        {post.title}
+      </Link>
+      <FaTrashAlt onClick={deletePost.bind(null, post.id)} />
     </>
   );
 }
