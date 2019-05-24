@@ -6,11 +6,11 @@ import styles from './Home.css';
 export default function Home() {
   return (
     <>
-      <h1>Posts</h1>
       <section className={styles.CreatePost}>
         <h2>Create Post</h2>
         <CreatePost />
       </section>
+      <h2>Posts:</h2>
       <section>
         <AllPosts />
       </section>

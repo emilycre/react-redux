@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaTrashAlt } from 'react-icons/fa';
 
 function Comment({ id, comment, deleteComment }) {
   return (
     <section>
       <p>{comment}</p>
-      <button onClick={deleteComment.bind(null, id)} />
+      <FaTrashAlt onClick={deleteComment.bind(null, id)} />
     </section>
   );
 }
